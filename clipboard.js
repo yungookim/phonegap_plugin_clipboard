@@ -6,7 +6,11 @@ var clipboard.prototype.copy = function(text, success, error){
   );
 }
 
-
+var clipboard.prototype.paste = function(success, error){
+  PhoneGap.exec(success, error, 
+    "CopyToClipboardPlugin", "paste", []
+  );
+}
 
 PhoneGap.addConstructor(function() {
   PhoneGap.addPlugin('clipboard', new clipboard());

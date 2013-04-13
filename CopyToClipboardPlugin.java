@@ -12,8 +12,9 @@ import android.text.ClipboardManager;
  */
 @SuppressWarnings("deprecation")
 public class CopyToClipboardPlugin extends Plugin {
-	private static final String actionCopy = "copy";
-	
+    private static final String actionCopy = "copy";
+    private static final String actionPaste = "paste";
+    
     /**
      * Executes the request and returns PluginResult.
      *
@@ -23,20 +24,26 @@ public class CopyToClipboardPlugin extends Plugin {
      * @return              A PluginResult object with a status and message.
      */
     @SuppressLint("NewApi")
-	public PluginResult execute(String action, JSONArray args, String callbackId) {
+    public PluginResult execute(String action, JSONArray args, String callbackId) {
         try {
-        	if (Looper.myLooper() == null) {
+            if (Looper.myLooper() == null) {
                 Looper.prepare();
-            }	
+            }
+            ClipboardManager clipboard = (ClipboardManager) this.ctx.getSystemService(Context.CLIPBOARD_SERVICE);
             if (action.equals(actionCopy)){
                 String arg = args.getString(0);
                 if (arg != null && arg.length() > 0){
-			ClipboardManager clipboard = (ClipboardManager) this.ctx.getSystemService(Context.CLIPBOARD_SERVICE);
-                	clipboard.setText(arg);
+                    clipboard.setText(arg);
                     return new PluginResult(PluginResult.Status.OK, arg);
                 } else {
                     return new PluginResult(PluginResult.Status.ERROR);
                 }
+            } else if (action.equals(actionPaste)){
+                String arg = (String) clipboard.getText();
+                if (arg == null) {
+                    arg = "";
+                }
+                return new PluginResult(PluginResult.Status.OK, arg);
             } else {
                 return new PluginResult(PluginResult.Status.INVALID_ACTION);
             }
