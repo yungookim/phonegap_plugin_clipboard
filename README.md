@@ -1,11 +1,10 @@
 phonegap_plugin_clipboard
 =========================
 
-Clipboard plugin for Phonegap
+Clipboard plugin for Phonegap tested for Android version 2.3 ~ 4.1
 
 
-To use
-====
+##To use##
 
 Add
 ```
@@ -16,18 +15,26 @@ to res/xml/config.xml under ```plugins```
 * copy CopyToClipboardPlugin.java into your project.
 * Copy clipboard.js to assets/www folder and reference it from .html file.
 
-API
-====
+##API##
 
-```copy(text, success, error)``` where success is a callback with ```status, args```
+The plugin will be attached to window.plugins and can be accessed by 
+
+```
+var success = function(status, args){};
+var error = function(err){};
+
+window.plugins.clipboard.copy(text, success, error)
+``` 
   
-```paste``` is coming soon
+```window.plugins.clipboard.paste``` is coming soon
 
 
+
+## License ##
 
 The MIT License (MIT)
-=====================
-Copyright (c) <2013> <Yungoo Kim>
+
+Copyright (c) 2013 Yungoo Kim
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
