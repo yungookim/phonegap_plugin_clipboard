@@ -1,5 +1,3 @@
-package com.Alottapps.SyncBoard;
-
 import org.apache.cordova.api.Plugin;
 import org.apache.cordova.api.PluginResult;
 import org.json.JSONArray;
