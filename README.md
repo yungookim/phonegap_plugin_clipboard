@@ -1,7 +1,7 @@
 phonegap_plugin_clipboard
 =========================
 
-Clipboard plugin for Phonegap tested for Android version 2.3 ~ 4.1
+Clipboard plugin for Phonegap tested for Android version 2.3 ~ 4.1 inspired by https://github.com/phonegap/phonegap-plugins/tree/master/Android/ClipboardManager
 
 
 ##To use##
