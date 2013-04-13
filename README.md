@@ -22,11 +22,19 @@ The plugin will be attached to window.plugins and can be accessed by
 ```
 var success = function(status, args){};
 var error = function(err){};
-
-window.plugins.clipboard.copy(text, success, error)
+var text = "COPYING TEXT";
+window.clipboard.copy(text, success, error);
 ``` 
   
-```window.plugins.clipboard.paste``` is coming soon
+```
+var success = function(ret, status){
+  //ret is the returned text from the system's clipboard
+  //status is the returned status
+};
+var error = function(err){};
+
+window.clipboard.paste(success, error);
+```
 
 
 
