@@ -19,13 +19,14 @@ to res/xml/config.xml under ```plugins```
 
 The plugin will be attached to window.plugins and can be accessed by 
 
+Copying
 ```
 var success = function(status, args){};
 var error = function(err){};
 var text = "COPYING TEXT";
 window.clipboard.copy(text, success, error);
 ``` 
-  
+Getting Text from the system's clipboard
 ```
 var success = function(ret, status){
   //ret is the returned text from the system's clipboard
