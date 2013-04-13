@@ -31,7 +31,7 @@ public class CopyToClipboardPlugin extends Plugin {
             if (action.equals(actionCopy)){
                 String arg = args.getString(0);
                 if (arg != null && arg.length() > 0){
-					ClipboardManager clipboard = (ClipboardManager) this.ctx.getSystemService(Context.CLIPBOARD_SERVICE);
+			ClipboardManager clipboard = (ClipboardManager) this.ctx.getSystemService(Context.CLIPBOARD_SERVICE);
                 	clipboard.setText(arg);
                     return new PluginResult(PluginResult.Status.OK, arg);
                 } else {
