@@ -1,7 +1,7 @@
 phonegap_plugin_clipboard
 =========================
 
-Clipboard plugin for Phonegap tested for Android version 2.3 ~ 4.1 inspired by https://github.com/phonegap/phonegap-plugins/tree/master/Android/ClipboardManager
+Clipboard plugin for Phonegap tested for Android version 2.3 ~ 4.1 inspired by [ClipboardManager](https://github.com/phonegap/phonegap-plugins/tree/master/Android/ClipboardManager)
 
 
 ##To use##
@@ -20,14 +20,14 @@ to res/xml/config.xml under ```plugins```
 The plugin will be attached to window.plugins and can be accessed by 
 
 Copying
-```
+```js
 var success = function(status, args){};
 var error = function(err){};
 var text = "COPYING TEXT";
 window.clipboard.copy(text, success, error);
 ``` 
 Getting Text from the system's clipboard
-```
+```js
 var success = function(ret, status){
   //ret is the returned text from the system's clipboard
   //status is the returned status
