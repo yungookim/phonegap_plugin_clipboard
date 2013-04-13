@@ -7,7 +7,7 @@ Clipboard plugin for Phonegap tested for Android version 2.3 ~ 4.1 inspired by [
 ##To use##
 
 Add
-```
+```xml
 // Remember to change example.example to your package name
 <plugin name="CopyToClipboardPlugin" value="com.example.example.CopyToClipboardPlugin" />
 ```  
@@ -33,7 +33,6 @@ var success = function(ret, status){
   //status is the returned status
 };
 var error = function(err){};
-
 window.clipboard.paste(success, error);
 ```
 
